@@ -1,0 +1,14 @@
+{
+  "development": {
+    "uri": "mongodb://root:thaihung113_at@localhost:27017/node_fulltask?authSource=admin",
+    "logging": false
+  },
+  "test": {
+    "uri": "mongodb://root:thaihung113_at@localhost:27017/database_test?authSource=admin",
+    "logging": false
+  },
+  "production": {
+    "uri": "mongodb://root:thaihung113_at@localhost:27017/database_production?authSource=admin",
+    "logging": false
+  }
+}
