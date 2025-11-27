@@ -22,6 +22,22 @@
                        placeholder="1234 Main St" value="<%=data.address%>">
             </div>
 
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="phonenumber">Phone Number</label>
+                    <input type="text" class="form-control" id="phonenumber" name="phonenumber" 
+                           value="<%=data.phonenumber%>">
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="gender">Gender</label>
+                    <select id="gender" name="gender" class="form-control">
+                        <option value="0" <%= data.gender === false ? 'selected' : '' %>>Male</option>
+                        <option value="1" <%= data.gender === true ? 'selected' : '' %>>Female</option>
+                    </select>
+                </div>
+            </div>
+
             <button type="submit" class="btn btn-primary">Update</button>
         </form>
     </div>

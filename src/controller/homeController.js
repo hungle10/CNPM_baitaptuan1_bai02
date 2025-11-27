@@ -54,7 +54,8 @@ let getEditCRUD = async (req, res) => {
 
     let user = await CRUDService.getUserInfoById(userId);
     if (user) {
-      return res.render("editCRUD.ejs", { user });
+      // pass user as `data` to match updateUser.ejs template
+      return res.render("updateUser.ejs", { data: user });
     }
     return res.send("User not found!");
   } catch (e) {

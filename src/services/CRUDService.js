@@ -47,6 +47,8 @@ let getAllUser = () => {
     try {
       // `.lean()` giúp trả về object JS gốc (tương tự raw: true của Sequelize)
       let users = await User.find().lean();
+      // Normalize id field for views (Mongoose returns _id)
+      users = users.map((u) => ({ ...u, id: u._id ? u._id.toString() : u.id }));
       resolve(users);
     } catch (e) {
       reject(e);
@@ -61,6 +63,8 @@ let getUserInfoById = (userId) => {
       let user = await User.findById(userId).lean(); // .lean() = trả về object JS gốc (như raw:true)
 
       if (user) {
+        // provide `id` alias for templates
+        user.id = user._id ? user._id.toString() : user.id;
         resolve(user);
       } else {
         resolve(null); // hoặc [] nếu bạn muốn giống logic cũ

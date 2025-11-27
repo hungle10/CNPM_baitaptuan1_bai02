@@ -4,7 +4,8 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon --exec babel-node src/server.js"
+    "start": "nodemon --exec babel-node src/server.js",
+    "migrate": "babel-node src/migrations/migrations_create_user.js"
   },
   "author": "Le Thai Hung",
   "license": "ISC",
